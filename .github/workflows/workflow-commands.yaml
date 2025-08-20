@@ -5,6 +5,15 @@ jobs:
     logging-commands:
         runs-on : ubuntu-latest
         steps:
-          - name: Log warning message
-            run: echo "::warning title=Warning Title::This is a warning message."
+          - name: Log an error message
+            run: echo "::error::Missing semicolon."
+          - name: Log error message with params
+            run: echo "::error title=Error Title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing Semicolon."
+          - name: Log debug message with params
+            run: echo "::debug title=Debug Title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing Semicolon."
+          - name: Log warning message with params
+            run: echo "::warning title=Warning Title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing Semicolon."
+          - name: Log notice message with params
+            run: echo "::notice title=Notice Title,file=app.js,line=2,endLine=3,col=5,endColumn=7::Missing Semicolon."
+
   
