@@ -1,0 +1,10 @@
+name : Workflow commands
+on : [push]
+
+jobs:
+    logging-commands:
+        runs-on : ubuntu-latest
+        steps:
+          - name: Log warning message
+            run: echo "::warning title=Warning Title::This is a warning message."
+  
